@@ -22,7 +22,7 @@ buildings['BuildingName'] = buildings.BuildingName.str.replace('Mendenhall Labor
 buildings['BuildingName'] = buildings.BuildingName.str.replace('Page Hall', 'Page, Henry F, Hall')
 
 building_map = dict(
-    data = [go.Scattermapbox(
+    data = [dict(
         lat = buildings.Latitude.astype(float).to_list(),
         lon = buildings.Longitude.astype(float).to_list(),
         mode = 'markers',
@@ -31,6 +31,7 @@ building_map = dict(
             opacity=0
         ),
         text = buildings.BuildingName.to_list(),
+        type = 'scattermapbox'
     )],
     layout = dict(
         width=1200,
