@@ -67,11 +67,66 @@ body = dbc.Container(
         html.H1("Hack OHI/O 2019"),
         dcc.Graph(
             figure = building_map
-        )
+        ),
+        dbc.Row([
+            dbc.Col([
+                dbc.Card([
+                    dbc.CardImg(src='/assets/images/shower.png',top=True,style={'height':'5rem','height':'10rem'}),
+                    dbc.CardBody(
+                        [
+                            html.H4("Hawt Water Usage", className="card-title"),
+                            html.P("Stop fucking up the planet. That is all.",
+                            className="card-text",
+                            )
+                    ])
+                
+                ])
+            ]),
+            dbc.Col([
+                dbc.Card([
+                    dbc.CardImg(src='/assets/images/bolt.svg',top=True,style={'height':'5rem','height':'10rem'}),
+                    dbc.CardBody(
+                        [
+                            html.H4("Energy Usage", className="card-title"),
+                            html.P("Stop fucking up the planet. That is all.",
+                            className="card-text",
+                            )
+                    ])
+                
+                ])
+            ]),
+            dbc.Col([
+                dbc.Card([
+                    dbc.CardImg(src='/assets/images/shower.png',top=True,style={'height':'5rem','height':'10rem'}),
+                    dbc.CardBody(
+                        [
+                            html.H4("Energy Usage", className="card-title"),
+                            html.P("Stop fucking up the planet. That is all.",
+                            className="card-text",
+                            )
+                    ])
+                
+                ])
+            ]),
+            dbc.Col([
+                dbc.Card([
+                    dbc.CardImg(src='/assets/images/bolt.svg',top=True,style={'height':'5rem','height':'10rem'}),
+                    dbc.CardBody(
+                        [
+                            html.H4("Energy Usage", className="card-title"),
+                            html.P("Stop fucking up the planet. That is all.",
+                            className="card-text",
+                            )
+                    ])
+                
+                ])
+            ])
+        ],style={'padding-top':10,'padding-bottom':10},justify='center'),
+        html.H5("Data provided by ENGIE. Built with " + u"\u2665" + " at Hack OHI/O 2019 by Cole Smith, Elizabeth Gilbert, and Matthew Walker.",style={'text-align':'center'})
     ]
 )
 
-app = dash.Dash(__name__)
+app = dash.Dash(__name__,external_stylesheets=[dbc.themes.BOOTSTRAP])
 server = app.server
 
 app.layout = html.Div([navbar, body])
