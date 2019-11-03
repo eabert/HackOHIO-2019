@@ -59,6 +59,11 @@ building_map = dict(
     )
 )
 
+coldshowernum = "125K"
+hotshowernum = "150K"
+boltnum = "35K"
+steamnum = "73K"
+
 
 navbar = dbc.Container()
 
@@ -71,12 +76,47 @@ body = dbc.Container(
         dbc.Row([
             dbc.Col([
                 dbc.Card([
-                    dbc.CardImg(src='/assets/images/shower.png',top=True,style={'height':'5rem','height':'10rem'}),
+                    dbc.Row([
+                        dbc.Col(width='300px'),
+                        dbc.Col(
+                            dbc.CardImg(src='/assets/images/shower.svg', style={'height':'40px','padding-left':'27px','padding-top':'10px'}),
+                            width='100px'
+                        ),
+                        dbc.Col(
+                            html.H5(hotshowernum,className="card-title",style={'color':'darkred','text-align':'right','font-size':'400%','font-weight':'bold','font-family':'Arial','padding-left':'15px'}),
+                            width='160px'
+                        )
+                    ]),
+                    html.H6("KBTU per hour",className='card-subtitle',style={'color':'darkred','text-align':'center','font-size':'100%','font-family':'Arial'}),
                     dbc.CardBody(
                         [
-                            html.H4("Hawt Water Usage", className="card-title"),
-                            html.P("Stop fucking up the planet. That is all.",
-                            className="card-text",
+                            html.H4("Cold Water Usage", className="card-title",style={'text-align':'center'}),
+                            html.P("This is equivalent to brewing 540 pots of coffee.",
+                            className="card-text",style={'text-align':'center'}
+                            )
+                    ])
+                
+                ])
+            ],align='stretch'),
+            dbc.Col([
+                dbc.Card([
+                    dbc.Row([
+                        dbc.Col(width='300px'),
+                        dbc.Col(
+                            dbc.CardImg(src='/assets/images/shower.svg', style={'height':'40px','padding-left':'27px','padding-top':'10px'}),
+                            width='100px'
+                        ),
+                        dbc.Col(
+                            html.H5(coldshowernum,className="card-title",style={'color':'skyblue','text-align':'right','font-size':'400%','font-weight':'bold','font-family':'Arial','padding-left':'15px'}),
+                            width='160px'
+                        )
+                    ]),
+                    html.H6("KBTU per hour",className='card-subtitle',style={'color':'skyblue','text-align':'center','font-size':'100%','font-family':'Arial'}),
+                    dbc.CardBody(
+                        [
+                            html.H4("Cold Water Usage", className="card-title",style={'text-align':'center'}),
+                            html.P("This is equivalent to running the microwave for 1 hour every day for a month.",
+                            className="card-text",style={'text-align':'center'}
                             )
                     ])
                 
@@ -84,12 +124,23 @@ body = dbc.Container(
             ]),
             dbc.Col([
                 dbc.Card([
-                    dbc.CardImg(src='/assets/images/bolt.svg',top=True,style={'height':'5rem','height':'10rem'}),
+                    dbc.Row([
+                        dbc.Col(width='300px'),
+                        dbc.Col(
+                            dbc.CardImg(src='/assets/images/bolt.svg', style={'height':'40px','padding-left':'50px','padding-top':'10px'}),
+                            width='100px'
+                        ),
+                        dbc.Col(
+                            html.H5(boltnum,className="card-title",style={'color':'gold','text-align':'right','font-size':'400%','font-weight':'bold','font-family':'Arial','padding-left':'15px'}),
+                            width='160px'
+                        )
+                    ]),
+                    html.H6("Kilowatts per hour",className='card-subtitle',style={'color':'gold','text-align':'center','font-size':'100%','font-family':'Arial'}),
                     dbc.CardBody(
                         [
-                            html.H4("Energy Usage", className="card-title"),
-                            html.P("Stop fucking up the planet. That is all.",
-                            className="card-text",
+                            html.H4("Energy Usage", className="card-title",style={'text-align':'center'}),
+                            html.P("This is equivalent to operating 24 laptop computers during a standard workday.",
+                            className="card-text",style={'text-align':'center'}
                             )
                     ])
                 
@@ -97,31 +148,29 @@ body = dbc.Container(
             ]),
             dbc.Col([
                 dbc.Card([
-                    dbc.CardImg(src='/assets/images/shower.png',top=True,style={'height':'5rem','height':'10rem'}),
+                    dbc.Row([
+                        dbc.Col(width='300px'),
+                        dbc.Col(
+                            dbc.CardImg(src='/assets/images/steam.svg', style={'height':'40px','padding-left':'50px','padding-top':'10px'}),
+                            width='100px'
+                        ),
+                        dbc.Col(
+                            html.H5(steamnum,className="card-title",style={'color':'gray','text-align':'right','font-size':'400%','font-weight':'bold','font-family':'Arial','padding-left':'15px'}),
+                            width='160px'
+                        )
+                    ]),
+                    html.H6("KBTU per hour",className='card-subtitle',style={'color':'gray','text-align':'center','font-size':'100%','font-family':'Arial'}),
                     dbc.CardBody(
                         [
-                            html.H4("Energy Usage", className="card-title"),
-                            html.P("Stop fucking up the planet. That is all.",
-                            className="card-text",
+                            html.H4("Steam Usage", className="card-title",style={'text-align':'center'}),
+                            html.P("This is equivalent to cooling off a room with a medium air conditioner for 22 hours.",
+                            className="card-text",style={'text-align':'center'}
                             )
                     ])
                 
                 ])
             ]),
-            dbc.Col([
-                dbc.Card([
-                    dbc.CardImg(src='/assets/images/bolt.svg',top=True,style={'height':'5rem','height':'10rem'}),
-                    dbc.CardBody(
-                        [
-                            html.H4("Energy Usage", className="card-title"),
-                            html.P("Stop fucking up the planet. That is all.",
-                            className="card-text",
-                            )
-                    ])
-                
-                ])
-            ])
-        ],style={'padding-top':10,'padding-bottom':10},justify='center'),
+        ],style={'padding-top':10,'padding-bottom':10},justify='stretch',align='center',no_gutters=True),
         html.H5("Data provided by ENGIE. Built with " + u"\u2665" + " at Hack OHI/O 2019 by Cole Smith, Elizabeth Gilbert, and Matthew Walker.",style={'text-align':'center'})
     ]
 )
