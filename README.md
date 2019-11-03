@@ -1,8 +1,8 @@
 ## HACK OHI/O 2019: Energy Consumption at Ohio State
 ### Team members: Cole Smith, Elizabeth Gilbert, Matthew Walker
 
-Energy data from: https://github.com/BabyBalooga/hackOHI.O
-OSU building data from: https://gismaps.osu.edu/OSUMaps/Default.html?#
+Energy data from: https://github.com/BabyBalooga/hackOHI.O   
+OSU building data from: https://gismaps.osu.edu/OSUMaps/Default.html?#   
 
 ## Presentation
 
